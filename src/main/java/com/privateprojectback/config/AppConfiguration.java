@@ -24,7 +24,7 @@ import java.security.interfaces.RSAPublicKey;
 
 @Configuration
 @EnableMethodSecurity
-public class AppConfigration {
+public class AppConfiguration {
 
     @Value("jwt.public.key")
     RSAPublicKey key;
