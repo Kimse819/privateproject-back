@@ -42,7 +42,10 @@ public class AppConfiguration {
         JWK jWk = new RSAKey.Builder(this.key)
                 .privateKey(this.priv)
                 .build();
+
         JWKSource<SecurityContext> jwks = new ImmutableJWKSet<>(new JWKSet(jWk));
+
+
         return new NimbusJwtEncoder(jwks);
     }
 
