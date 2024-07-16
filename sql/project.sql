@@ -1,4 +1,4 @@
-USE `movie-recommend`;
+USE movie_recommend;
 
 # 회원 테이블
 CREATE TABLE member
@@ -47,3 +47,7 @@ CREATE TABLE board_file
     inserted DATETIME     NOT NULL DEFAULT NOW(),
     PRIMARY KEY (board_id, name)
 );
+
+SELECT *
+FROM board
+ORDER BY id DESC;
