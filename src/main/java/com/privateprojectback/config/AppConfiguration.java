@@ -26,10 +26,10 @@ import java.security.interfaces.RSAPublicKey;
 @EnableMethodSecurity
 public class AppConfiguration {
 
-    @Value("jwt.public.key")
+    @Value("${jwt.public.key}")
     RSAPublicKey key;
 
-    @Value("jwt.private.key")
+    @Value("${jwt.private.key}")
     RSAPrivateKey priv;
 
     @Bean
