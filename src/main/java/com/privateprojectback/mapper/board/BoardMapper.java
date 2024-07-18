@@ -11,4 +11,5 @@ public interface BoardMapper {
             VALUES (#{title}, #{content}, #{member_id})
             """)
     public int insert(Board board);
+    
 }
