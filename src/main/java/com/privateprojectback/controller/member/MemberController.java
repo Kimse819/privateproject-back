@@ -84,7 +84,9 @@ public class MemberController {
 
     @DeleteMapping("{id}")
     @PreAuthorize("isAuthenticated()")//권한
-    public ResponseEntity delete(@RequestBody Member member, Authentication authentication) {
+    public ResponseEntity delete(
+            @RequestBody Member member,
+            Authentication authentication) {
         if (service.hasAccess(member, authentication)) {
             service.remove(member.getId());
             return ResponseEntity.ok().build();

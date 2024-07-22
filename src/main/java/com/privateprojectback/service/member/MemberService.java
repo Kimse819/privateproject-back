@@ -1,6 +1,7 @@
 package com.privateprojectback.service.member;
 
 import com.privateprojectback.domain.member.Member;
+import com.privateprojectback.mapper.board.BoardMapper;
 import com.privateprojectback.mapper.member.MemberMapper;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.core.Authentication;
@@ -26,6 +27,7 @@ public class MemberService {
     private final MemberMapper mapper;
     private final BCryptPasswordEncoder passwordEncoder;
     private final JwtEncoder jwtEncoder;
+    private final BoardMapper boardMapper;
 
     public void add(Member member) {
         if ("male".equalsIgnoreCase(member.getGender())) {
@@ -54,6 +56,7 @@ public class MemberService {
     }
 
     public void remove(Integer id) {
+        boardMapper.deleteByMemberId(id);
         mapper.deleteById(id);
     }
 
@@ -79,6 +82,7 @@ public class MemberService {
         if (dbMember == null) {
             return false;
         }
+        
         if (!passwordEncoder.matches(member.getOldPassword(), dbMember.getPassword())) {
             return false;
         }

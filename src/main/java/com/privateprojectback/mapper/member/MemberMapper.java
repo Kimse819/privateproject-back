@@ -38,7 +38,7 @@ public interface MemberMapper {
             DELETE FROM member
             WHERE id = #{id}
             """)
-    void deleteById(Integer id);
+    int deleteById(Integer id);
 
     @Update("""
             UPDATE member 
@@ -48,7 +48,6 @@ public interface MemberMapper {
             WHERE id = #{id}
             """)
     int update(Member member);
-
 
     @Select("""
                         SELECT name
