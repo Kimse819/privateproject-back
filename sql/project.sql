@@ -106,7 +106,8 @@ CREATE TABLE recommendation
     PRIMARY KEY (member_id, movie_id)
 );
 
-
+INSERT INTO authority(member_id, name)
+VALUES (2, 'admin');
 
 
 
