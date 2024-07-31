@@ -19,4 +19,5 @@ public class BoardController {
     public void add(@RequestBody Board board) {
         service.add(board);
     }
+
 }
