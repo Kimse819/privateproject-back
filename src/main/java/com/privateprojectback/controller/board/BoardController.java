@@ -19,4 +19,9 @@ public class BoardController {
     public void add(@RequestBody Board board) {
         service.add(board);
     }
+
+    @PostMapping("delete")
+    public void delete(@RequestBody Board board) {
+
+    }
 }

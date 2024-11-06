@@ -1,3 +1,4 @@
+CREATE DATABASE movie_recommend;
 USE movie_recommend;
 
 # 회원 테이블
